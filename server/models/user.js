@@ -23,7 +23,12 @@ let userSchema = new Schema({
     }
     ]
   },
-  password: String
+  password: String,
+
+  favs: [{
+    id: String,
+    joke: String,
+  }]
 })
 
 userSchema.pre('save', function(next) {

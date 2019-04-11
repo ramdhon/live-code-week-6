@@ -4,7 +4,6 @@ const User = require('../models/user');
 module.exports = (req, res, next) => {
   try {
     let decoded = jwt.verify(req.headers.token);
-    console.log(decoded);
     User.findOne({
       email: decoded.email
     })
